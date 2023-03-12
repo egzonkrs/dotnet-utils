@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Polly" Version="7.2.3" />
+    <PackageReference Include="Confluent.Kafka" Version="2.0.2" />
+    <PackageReference Include="System.Text.Json" Version="7.0.2" />
+    <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" PrivateAssets="compile" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" PrivateAssets="compile" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.0" PrivateAssets="compile" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="7.0.1" PrivateAssets="compile" />
+    <PackageReference Include="Microsoft.Extensions.Options.ConfigurationExtensions" Version="7.0.0" PrivateAssets="compile" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SampleProject.BuildingBlocks.Messaging.Kafka.Abstractions\SampleProject.BuildingBlocks.Messaging.Kafka.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
