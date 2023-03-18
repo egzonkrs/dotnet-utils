@@ -72,6 +72,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProject.BuildingBlock
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProject.BuildingBlocks.Web.Versioning", "src\Web\SampleProject.BuildingBlocks.Web.Versioning\SampleProject.BuildingBlocks.Web.Versioning.csproj", "{30C9336A-12FA-46A3-B4C0-31C569ECA5D2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", "{BC2FAAFF-7180-4828-84FA-A4C429C16F62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProject.BuildingBlocks.Validation.FluentValidation.Web", "src\SampleProject.BuildingBlocks.Validation.FluentValidation.Web\SampleProject.BuildingBlocks.Validation.FluentValidation.Web.csproj", "{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -105,6 +109,8 @@ Global
 		{41ADA0C5-3197-4CD1-ACD2-2ED7C4DC98A4} = {A6E9AA33-F4BA-4BBE-A55D-3C8AAF6E51E9}
 		{7F8A60C8-C58A-47D9-A692-2EBF9962C757} = {98BA8D75-36B9-4157-B7C3-27AA8F1E349D}
 		{30C9336A-12FA-46A3-B4C0-31C569ECA5D2} = {98BA8D75-36B9-4157-B7C3-27AA8F1E349D}
+		{BC2FAAFF-7180-4828-84FA-A4C429C16F62} = {F75820C9-9732-4977-A522-2A69BBCD8561}
+		{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03} = {BC2FAAFF-7180-4828-84FA-A4C429C16F62}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{44C40C83-3233-4026-B1FD-F0DB1D3B1F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -167,5 +173,9 @@ Global
 		{30C9336A-12FA-46A3-B4C0-31C569ECA5D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30C9336A-12FA-46A3-B4C0-31C569ECA5D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30C9336A-12FA-46A3-B4C0-31C569ECA5D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
