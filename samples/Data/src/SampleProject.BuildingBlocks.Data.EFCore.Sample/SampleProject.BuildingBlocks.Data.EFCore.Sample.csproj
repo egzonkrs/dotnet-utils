@@ -20,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\src\Data\SampleProject.BuildingBlocks.Data.Abstractions\SampleProject.BuildingBlocks.Data.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\..\src\Data\SampleProject.BuildingBlocks.Data.EntityFrameworkCore\SampleProject.BuildingBlocks.Data.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\src\Web\SampleProject.BuildingBlocks.Web.AspNetCore\SampleProject.BuildingBlocks.Web.AspNetCore.csproj" />
   </ItemGroup>
 
 </Project>

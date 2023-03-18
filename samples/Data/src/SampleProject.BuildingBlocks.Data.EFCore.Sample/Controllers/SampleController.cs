@@ -1,10 +1,10 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using SampleProject.BuildingBlocks.Data.Abstractions;
 using SampleProject.BuildingBlocks.Data.EFCore.Sample.Data;
 using SampleProject.BuildingBlocks.Data.EFCore.Sample.Entities;
 using SampleProject.BuildingBlocks.Data.EFCore.Sample.Repositories;
-using SampleProject.BuildingBlocks.Data.Abstractions;
 
 namespace SampleProject.BuildingBlocks.Data.EFCore.Sample.Controllers;
 
