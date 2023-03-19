@@ -1,27 +1,27 @@
 <Project>
-  <PropertyGroup>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageProjectUrl>SampleProject/SampleProject.BuildingBlocks</PackageProjectUrl>
-    <PackageIcon>SampleProject.BuildingBlocks.png</PackageIcon>
-    <PackageIconFullPath>$(MSBuildThisFileDirectory)../SampleProject.BuildingBlocks.png</PackageIconFullPath>
-    <!-- Set the Initial Version Number -->
-    <Version>1.0.0</Version>
-    <PackageVersion>$(Version)</PackageVersion>
-  </PropertyGroup>
+    <PropertyGroup>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageProjectUrl>SampleProject/SampleProject.Tools</PackageProjectUrl>
+        <PackageIcon>SampleProject.Tools.png</PackageIcon>
+        <PackageIconFullPath>$(MSBuildThisFileDirectory)../SampleProject.Tools.png</PackageIconFullPath>
+        <!-- Set the Initial Version Number -->
+        <Version>1.0.0</Version>
+        <PackageVersion>$(Version)</PackageVersion>
+    </PropertyGroup>
 
-  <PropertyGroup>
-    <PackageOutputPath>$(MSBuildThisFileDirectory)../artifacts/nugets</PackageOutputPath>
-    <PackageOutputPath Condition=" $(BUILD_ARTIFACTS_NUGET_DIRECTORY) != '' ">$(BUILD_ARTIFACTS_NUGET_DIRECTORY)</PackageOutputPath>
-    <IncludeSymbols>true</IncludeSymbols>
-  </PropertyGroup>
+    <PropertyGroup>
+        <PackageOutputPath>$(MSBuildThisFileDirectory)../artifacts/nugets</PackageOutputPath>
+        <PackageOutputPath Condition=" $(BUILD_ARTIFACTS_NUGET_DIRECTORY) != '' ">$(BUILD_ARTIFACTS_NUGET_DIRECTORY)</PackageOutputPath>
+        <IncludeSymbols>true</IncludeSymbols>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="$(PackageIconFullPath)" Pack="true" PackagePath="\" Visible="false" />
-  </ItemGroup>
-  
-  <!-- Once MSBuild finds a Directory.Build.props file, it stops further scanning. 
+    <ItemGroup>
+        <None Include="$(PackageIconFullPath)" Pack="true" PackagePath="\" Visible="false" />
+    </ItemGroup>
+
+    <!-- Once MSBuild finds a Directory.Build.props file, it stops further scanning. 
        Place this code to continue scanning and merge into the outer file. -->
-  <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
+    <Import Project="$([MSBuild]::GetPathOfFileAbove('Directory.Build.props', '$(MSBuildThisFileDirectory)../'))" />
 </Project>

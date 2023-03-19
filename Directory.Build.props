@@ -4,7 +4,7 @@
         <DefaultLanguage>en-GB</DefaultLanguage>
         <Authors>SampleAuthor</Authors>
         <Copyright>© $([System.DateTime]::Now.Year) SampleAuthor</Copyright>
-        <RepositoryUrl>SampleAuthor/SampleProject.BuildingBlocks</RepositoryUrl>
+        <RepositoryUrl>SampleAuthor/SampleProject.Tools</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <!-- Root control Version Prefix -->
         <AssemblyName>$(MSBuildProjectName)</AssemblyName>
