@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\src\DependencyInjection\SampleProject.Tools.DependencyInjection\SampleProject.Tools.DependencyInjection.csproj" />
+      <ProjectReference Include="..\..\..\src\Messaging\SampleProject.Tools.Messaging.Abstractions\SampleProject.Tools.Messaging.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\src\Messaging\SampleProject.Tools.Messaging.Kafka.Abstractions\SampleProject.Tools.Messaging.Kafka.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\src\Messaging\SampleProject.Tools.Messaging.Kafka\SampleProject.Tools.Messaging.Kafka.csproj" />
+    </ItemGroup>
+
+</Project>

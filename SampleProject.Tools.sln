@@ -77,6 +77,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Validation", "Validation", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProject.Tools.Validation.FluentValidation.Web", "src\SampleProject.Tools.Validation.FluentValidation.Web\SampleProject.Tools.Validation.FluentValidation.Web.csproj", "{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kafka", "Kafka", "{22339477-56A2-40E8-99B0-B5B8BDDC902F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F9793423-1C7B-453D-BD9C-24731B371512}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProject.Tools.Kafka.Sample", "samples\Messaging\SampleProject.Tools.Kafka.Sample\SampleProject.Tools.Kafka.Sample.csproj", "{B6455834-2AC7-484F-883F-8306BDA9812E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -112,6 +118,9 @@ Global
 		{30C9336A-12FA-46A3-B4C0-31C569ECA5D2} = {98BA8D75-36B9-4157-B7C3-27AA8F1E349D}
 		{BC2FAAFF-7180-4828-84FA-A4C429C16F62} = {F75820C9-9732-4977-A522-2A69BBCD8561}
 		{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03} = {BC2FAAFF-7180-4828-84FA-A4C429C16F62}
+		{22339477-56A2-40E8-99B0-B5B8BDDC902F} = {61202673-3FC9-4649-A21F-37B1CBDEE152}
+		{F9793423-1C7B-453D-BD9C-24731B371512} = {22339477-56A2-40E8-99B0-B5B8BDDC902F}
+		{B6455834-2AC7-484F-883F-8306BDA9812E} = {F9793423-1C7B-453D-BD9C-24731B371512}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{44C40C83-3233-4026-B1FD-F0DB1D3B1F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -178,5 +187,9 @@ Global
 		{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC06EA7F-B9A3-43AE-AE1F-90DB652ABB03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6455834-2AC7-484F-883F-8306BDA9812E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6455834-2AC7-484F-883F-8306BDA9812E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6455834-2AC7-484F-883F-8306BDA9812E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6455834-2AC7-484F-883F-8306BDA9812E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
