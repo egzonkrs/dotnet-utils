@@ -13,6 +13,7 @@
         <Deterministic>False</Deterministic>
         <LangVersion>latest</LangVersion>
         <NoWarn>NU5105</NoWarn>
+<!--        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>-->
     </PropertyGroup>
 
 </Project>
