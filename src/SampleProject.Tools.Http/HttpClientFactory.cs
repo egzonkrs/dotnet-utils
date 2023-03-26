@@ -1,24 +1,83 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using JetBrains.Annotations;
 
 namespace SampleProject.Tools.Http;
 
+/// <summary>
+/// Factory Class for <see cref="HttpClient"/>.
+/// </summary>
 public class HttpClientFactory : IDisposable
 {
-    private static readonly Dictionary<string, HttpClient> Instances =
-        new Dictionary<string, HttpClient>();
-
-    public static HttpClient Create()
+    private static readonly Dictionary<string, HttpClient> Instances = new();
+    
+    private static readonly object InstancesLock = new object();
+    
+    private bool _isDisposing;
+    
+    /// <summary>
+    /// Creates an instance of <see cref="HttpClient"/>.
+    /// </summary>
+    /// <param name="configureHttpClientBuilder">A delegate that is used to configure an <see cref="HttpClientBuilder"/>.</param>
+    /// <returns>An <see cref="HttpClient"/>.</returns>
+    public static HttpClient Create(Action<HttpClientBuilder> configureHttpClientBuilder = null)
     {
-        var client = HttpClientFactory.Create();
+        var builder = new HttpClientBuilder();
+        configureHttpClientBuilder?.Invoke(builder);
 
-        client.BaseAddress = new Uri("http://localhost:5000");
+        var client = System.Net.Http.HttpClientFactory.Create(builder.MessageHandler, builder.DelegatingHandlers);
+
+        client.BaseAddress = builder.Options.BaseAddress;
 
         return client;
     }
 
+    /// <summary>
+    /// Creates or Gets an instance of <see cref="HttpClient"/> according to the name.
+    /// </summary>
+    /// <param name="name">Name of instance for the <see cref="HttpClient"/>.</param>
+    /// <param name="configureHttpClientBuilder">A delegate that is used to configure an <see cref="HttpClientBuilder"/>.</param>
+    /// <returns>An <see cref="HttpClient"/>.</returns>
+    public static HttpClient GetOrAdd([NotNull] string name,
+        Action<HttpClientBuilder> configureHttpClientBuilder = null)
+    {
+        if (string.IsNullOrWhiteSpace(name))
+        {
+            throw new ArgumentException($"'{nameof(name)}' must not be null, empty or whitespace.", nameof(name));
+        }
+        
+        // ReSharper disable once InconsistentlySynchronizedField
+        if (Instances.TryGetValue(name, out var instance))
+        {
+            return instance;
+        }
+
+        lock (InstancesLock)
+        {
+            if (Instances.TryGetValue(name, out var lockInstance))
+            {
+                return lockInstance;
+            }
+            
+            var httpClient = Create(configureHttpClientBuilder);
+
+            Instances.Add(name, httpClient);
+
+            return httpClient;
+        }
+    }
+
+    ///  <inheritdoc />
     public void Dispose()
     {
+        if (_isDisposing) return;
+
+        _isDisposing = true;
+        
+        foreach (var client in Instances.Values)
+        {
+            client?.Dispose();
+        }
     }
 }
