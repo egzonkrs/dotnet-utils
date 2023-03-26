@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Refit" Version="6.3.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
     <PackageReference Include="JetBrains.Annotations" Version="2022.3.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
@@ -20,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\src\Data\SampleProject.Tools.Data.Abstractions\SampleProject.Tools.Data.Abstractions.csproj" />
     <ProjectReference Include="..\..\..\..\src\Data\SampleProject.Tools.Data.EntityFrameworkCore\SampleProject.Tools.Data.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\..\..\src\SampleProject.Tools.Http\SampleProject.Tools.Http.csproj" />
     <ProjectReference Include="..\..\..\..\src\Web\SampleProject.Tools.Web.AspNetCore\SampleProject.Tools.Web.AspNetCore.csproj" />
   </ItemGroup>
 
