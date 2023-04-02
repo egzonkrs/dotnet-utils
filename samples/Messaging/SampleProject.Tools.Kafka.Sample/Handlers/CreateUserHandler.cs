@@ -1,4 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
+using System.ComponentModel.DataAnnotations;
 using SampleProject.Tools.Kafka.Sample.Models;
 using SampleProject.Tools.Messaging.Abstractions;
 using SampleProject.Tools.Messaging.Kafka.Abstractions;

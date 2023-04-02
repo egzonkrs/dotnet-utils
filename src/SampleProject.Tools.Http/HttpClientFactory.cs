@@ -8,7 +8,7 @@ namespace SampleProject.Tools.Http;
 /// <summary>
 /// Factory Class for <see cref="HttpClient"/>.
 /// </summary>
-public class HttpClientFactory : IDisposable
+public abstract class HttpClientFactory : IDisposable
 {
     private static readonly Dictionary<string, HttpClient> Instances = new();
     private static readonly object InstancesLock = new();
@@ -33,6 +33,14 @@ public class HttpClientFactory : IDisposable
 
     /// <summary>
     /// Creates or Gets an instance of <see cref="HttpClient"/> according to the name.
+    /// If the instance doesn't exist, the method acquires a lock on the InstancesLock
+    /// object to ensure that only one thread can access the Instances collection at a time.
+    /// This prevents multiple threads from creating and adding the same instance simultaneously.
+    /// After acquiring the lock, the method checks again if the instance exists in the collection
+    /// to handle the case where another thread might have created and added the instance while waiting
+    /// for the lock. If the instance exists, it returns it. If it doesn't exist,
+    /// the method creates a new HttpClient instance using the Create method and adds it
+    /// to the Instances collection. Finally, it returns the new instance.
     /// </summary>
     /// <param name="name">Name of instance for the <see cref="HttpClient"/>.</param>
     /// <param name="configureHttpClientBuilder">A delegate that is used to configure an <see cref="HttpClientBuilder"/>.</param>

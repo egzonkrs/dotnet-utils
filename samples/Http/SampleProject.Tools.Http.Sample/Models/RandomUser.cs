@@ -1,65 +1,9 @@
-using Refit;
-using System;
+﻿using System;
 using Newtonsoft.Json;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using SampleProject.Tools.Http;
-using SampleProject.Tools.Data.Abstractions;
-using SampleProject.Tools.Data.EFCore.Sample.Data;
-using SampleProject.Tools.Data.EFCore.Sample.Entities;
-using SampleProject.Tools.Data.EFCore.Sample.Repositories;
 
-namespace SampleProject.Tools.Data.EFCore.Sample.Controllers;
+namespace SampleProject.Tools.Http.Sample.Models;
 
-public interface IMockRefitRestClient
-{
-    [Get("/users")]
-    Task<User> GetUsersAsync();
-}
-
-[ApiController]
-[Route("api/[controller]")]
-public class SampleController : ControllerBase
-{
-    private readonly ISampleRepository _sampleRepository;
-    private readonly IUnitOfWork<SampleDbContext> _unitOfWork;
-
-    public SampleController(ISampleRepository sampleRepository, IUnitOfWork<SampleDbContext> unitOfWork)
-    {
-        _sampleRepository = sampleRepository;
-        _unitOfWork = unitOfWork;
-    }
-
-    [HttpGet("insert-one")]
-    public async Task<IActionResult> InsertOneSample()
-    {
-        var entity = new SampleEntity { Id = Guid.NewGuid(), Name = "Test", CreatedOn = DateTime.UtcNow };
-
-        var entityId = await _sampleRepository.InsertAsync(entity);
-        var isSaved = await _unitOfWork.SaveChangesAsync();
-        
-        var client = HttpClientFactory.Create(x =>
-        {
-            x.Options.WithBaseAddress("https://random-data-api.com/api/v2");
-        });
-        
-        var service = RestService.For<IMockRefitRestClient>(client);
-
-        // Act
-        var actual = await service.GetUsersAsync();
-
-        return Ok(new { Data = actual });
-        // return Ok(new { Data = entity, IsSaved = isSaved });
-    }
-
-    [HttpGet("get-all")]
-    public async Task<IActionResult> GetAllSamples()
-    {
-        return Ok(await _sampleRepository.GetAllAsync());
-    }
-}
-
-public partial class User
+public class RandomUser
 {
     [JsonProperty("id")]
     public long Id { get; set; }

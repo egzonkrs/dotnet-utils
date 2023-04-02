@@ -1,4 +1,7 @@
+using System;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 using SampleProject.Tools.Kafka.Sample.Models;
 
 namespace SampleProject.Tools.Kafka.Sample.Controllers;

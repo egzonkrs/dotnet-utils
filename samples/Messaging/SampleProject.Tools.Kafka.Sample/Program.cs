@@ -1,5 +1,8 @@
-using SampleProject.Tools.DependencyInjection.Extensions;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using SampleProject.Tools.Kafka.Sample.Modules;
+using SampleProject.Tools.DependencyInjection.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

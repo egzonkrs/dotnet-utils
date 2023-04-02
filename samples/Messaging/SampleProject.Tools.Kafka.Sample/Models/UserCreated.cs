@@ -1,4 +1,6 @@
-﻿namespace SampleProject.Tools.Kafka.Sample.Models;
+﻿using System;
+
+namespace SampleProject.Tools.Kafka.Sample.Models;
 
 public class UserCreated
 {

@@ -1,3 +1,5 @@
+using System;
+
 namespace SampleProject.Tools.Kafka.Sample.Models;
 
 public class User

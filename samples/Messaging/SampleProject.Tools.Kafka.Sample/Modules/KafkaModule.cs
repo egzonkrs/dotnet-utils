@@ -1,6 +1,8 @@
-﻿using SampleProject.Tools.DependencyInjection.Abstractions;
+﻿using Microsoft.Extensions.Configuration;
 using SampleProject.Tools.Kafka.Sample.Models;
+using Microsoft.Extensions.DependencyInjection;
 using SampleProject.Tools.Messaging.Kafka.Extensions;
+using SampleProject.Tools.DependencyInjection.Abstractions;
 using SampleProject.Tools.Messaging.Kafka.Serializers.Extensions;
 
 namespace SampleProject.Tools.Kafka.Sample.Modules;
