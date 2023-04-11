@@ -12,11 +12,11 @@ public class CachePolicy : ICachePolicy
     public static readonly CachePolicy DoNotExpire = new CachePolicy();
     
     /// <inheritdoc />
-    public TimeSpan TimeToLive { get; }
+    public TimeSpan TimeToLive { get; internal set; }
     
     /// <inheritdoc />
-    public int SecondsRange { get; }
+    public int SecondsRange { get; set; }
     
     /// <inheritdoc />
-    public bool IsSliding { get; }
+    public bool IsSliding { get; internal set; }
 }
