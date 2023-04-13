@@ -105,12 +105,24 @@ public class ItemPolicyBuilder : IItemPolicyBuilder
     /// <inheritdoc />
     public IItemPolicyBuilder LocalPolicy(TimeSpan timeToLive, int maxRandomSeconds)
     {
-        throw new NotImplementedException();
+        _itemPolicy.Local = new CachePolicy
+        {
+            TimeToLive = timeToLive,
+            SecondsRange = maxRandomSeconds,
+            IsSliding = false
+        };
+
+        return this;
     }
 
     /// <inheritdoc />
     public ItemPolicy Create(string name)
     {
-        throw new NotImplementedException();
+        // TODO: change nameof to use validation constants.
+        if(string.IsNullOrWhiteSpace(name)) throw new ArgumentNullException(nameof(name));
+        
+        _itemPolicy.Name = name;
+        
+        return _itemPolicy;
     }
 }
