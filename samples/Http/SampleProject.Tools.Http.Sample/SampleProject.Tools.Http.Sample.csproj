@@ -11,6 +11,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\..\src\Http\SampleProject.Tools.Http\SampleProject.Tools.Http.csproj" />
       <ProjectReference Include="..\..\..\src\Models\SampleProject.Tools.Models\SampleProject.Tools.Models.csproj" />
       <ProjectReference Include="..\..\..\src\SampleProject.Tools.Http\SampleProject.Tools.Http.csproj" />
     </ItemGroup>
