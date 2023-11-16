@@ -11,7 +11,7 @@ namespace SampleProject.Tools.Data.Abstractions;
 public interface IUnitOfWork<TContext>
 {
     /// <summary>
-    /// Saves all the changes mad in the context to the database.
+    /// Saves all the changes made in the context to the database.
     /// </summary>
     /// <param name="cancellationToken">The <see cref="CancellationToken"/></param>
     /// <returns>The number of entries written to the database.</returns>

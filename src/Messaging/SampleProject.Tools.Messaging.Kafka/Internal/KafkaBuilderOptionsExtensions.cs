@@ -12,7 +12,7 @@ internal static class KafkaBuilderOptionsExtensions
     {
         if (builderOptions is null) throw new ArgumentNullException(nameof(builderOptions));
 
-        if (builderOptions.KafkaTopicOptions.IsTopicCreationEnabled is true)
+        if (builderOptions.KafkaTopicOptions.IsTopicCreationEnabled)
         {
             Task.Run(async () =>
             {

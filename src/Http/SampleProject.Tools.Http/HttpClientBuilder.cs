@@ -43,9 +43,7 @@ public class HttpClientBuilder
     /// <returns>The <see cref="HttpClientBuilder"/>.</returns>
     public HttpClientBuilder WithMessageHandler([NotNull] HttpMessageHandler handler)
     {
-        if (handler is null) throw new ArgumentNullException(nameof(handler));
-
-        MessageHandler = handler;
+        MessageHandler = handler ?? throw new ArgumentNullException(nameof(handler));
             
         return this;
     }
