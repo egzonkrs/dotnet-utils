@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\src\DependencyInjection\SampleProject.Utils.DependencyInjection\SampleProject.Utils.DependencyInjection.csproj" />
+      <ProjectReference Include="..\..\..\src\Messaging\SampleProject.Utils.Messaging.Abstractions\SampleProject.Utils.Messaging.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\src\Messaging\SampleProject.Utils.Messaging.Kafka.Abstractions\SampleProject.Utils.Messaging.Kafka.Abstractions.csproj" />
+      <ProjectReference Include="..\..\..\src\Messaging\SampleProject.Utils.Messaging.Kafka\SampleProject.Utils.Messaging.Kafka.csproj" />
+    </ItemGroup>
+
+</Project>
