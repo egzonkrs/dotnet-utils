@@ -1,6 +1,6 @@
 ﻿using System;
+using Asp.Versioning;
 using JetBrains.Annotations;
-using Microsoft.AspNetCore.Mvc.Versioning;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace SampleProject.Utils.Web.Versioning.Extensions;
@@ -21,15 +21,13 @@ public static class ServiceCollectionExtensions
         [NotNull] this IServiceCollection services,
         Action<ApiVersioningOptions> configureOptions = null)
     {
-        if (services is null) throw new ArgumentNullException(nameof(services));
+        ArgumentNullException.ThrowIfNull(services);
 
         services.AddApiVersioning(options =>
         {
             options.ReportApiVersions = true;
             configureOptions?.Invoke(options);
-        });
-
-        services.AddVersionedApiExplorer(options =>
+        }).AddApiExplorer(options =>
         {
             options.GroupNameFormat = "'v'V";
             options.SubstituteApiVersionInUrl = true;

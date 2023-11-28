@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net6</TargetFramework>
+        <TargetFramework>net8</TargetFramework>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="JetBrains.Annotations" Version="2020.1.0" PrivateAssets="compile" />
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="4.2.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="4.2.0" PrivateAssets="compile" />
+        <PackageReference Include="Asp.Versioning.Mvc" Version="7.1.0" PrivateAssets="compile" />
+        <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="7.1.0" PrivateAssets="compile" />
     </ItemGroup>
 
 </Project>
